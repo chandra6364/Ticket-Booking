@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <nav class="ticketnav">
+        <div class="mytravel">
+            <aside>
+                <img src="./my travel.jpg" alt="" width="100px" height="100px">
+            </aside>
+            <aside style="font-size: 320%; font-weight: bold; color: red;">Book My Travels</aside>
+        </div>
+        <div class="tripDetails">
+            <aside class="offers">
+                <a href="#travelOfferDetails"><p style="font-size: 250%; color: blue;">Super offers</p></a>
+                <p style="font-size: 150%; color: rgb(244, 12, 59);">Explore great deals and offers</p>
+            </aside>
+            <aside class="bookings">
+                <p style="font-size: 250%; color: blue;">My Trips</p>
+                <p style="font-size: 150%; color: rgb(244, 12, 59);">Manage your bookings</p>
+            </aside>
+        </div>
+        <div class="userlogin">
+            <a href="./login.html" class="accountlogin"><button class="accountloginbutton">Log In or Sign In</button></a>
+        </div>
+    </nav>
+    <div class="imagemovement">
+        <aside id="movingelement1">
+            <section class="leftbutton"><button class="buttonsize"><img src="./left arrow.jpg" alt="" width="80%" height="60%"></button></section>
+            <section class="aa"><img src="./bus1.png" alt="" width="100%" height="100%"></section>
+            <section class="rightbutton"><button onclick="buttonRightOne()" class="buttonsize"><img src="./right arrow.png" alt="" width="80%" height="60%"></button></section>
+        </aside>
+        <aside id="movingelement2">
+            <section class="leftbutton"><button onclick="buttonleftTwo()" class="buttonsize"><img src="./left arrow.jpg" alt="" width="80%" height="60%"></button></section>
+            <section class="bb"><img src="./train1.jpg" alt="" width="100%" height="100%"></section>
+            <section class="rightbutton"><button onclick="buttonRightTwo()" class="buttonsize"><img src="./right arrow.png" alt="" width="80%" height="60%"></button></section>
+        </aside>
+        <aside id="movingelement3">
+            <section class="leftbutton"><button onclick="buttonleftThree()" class="buttonsize"><img src="./left arrow.jpg" alt="" width="80%" height="60%"></button></section>
+            <section class="cc"><img src="./flight1.jpg" alt="" width="100%" height="100%"></section>
+            <section class="rightbutton"><button class="buttonsize"><img src="./right arrow.png" alt="" width="80%" height="60%"></button></section>
+        </aside>
+    </div>
+    <div class="busBooking">
+        <section class="bookingImage">
+            <aside><img src="./buslogo.jpg" alt="" width="150px" height="150px"></aside>
+            <aside style="font-size: 300%; font-weight: bold; color: blue;">BOOK MY BUS</aside>
+        </section>
+        <section class="transportdetails">
+            <aside class="fromAndToDetails">
+                <article class="fromDetailes">
+                    <p>FROM</p>
+                    <select name="" id="fromselect" class="selection">
+                        <option value="">Bangalore</option>
+                        <option value="">Belagavi</option>
+                        <option value="">Tumkur</option>
+                        <option value="">Chithradurga</option>
+                    </select>
+                </article>
+                <article class="toDetailes">
+                    <p>TO</p>
+                    <select name="" id="fromselect" class="selection">
+                        <option value="">Hydarabad</option>
+                        <option value="">Mumbai</option>
+                        <option value="">Chennai</option>
+                        <option value="">Goa</option>
+                    </select>
+                </article>
+                <article class="dateDetailes">
+                    <p>TRAVEL DATE</p>
+                    <input type="date" class="selection">
+                </article>
+                <article class="seatTypeDetailes">
+                    <p>CLASS</p>
+                    <select name="" id="" class="selection">
+                        <option value="">All class</option>
+                        <option value="">Sleeper class</option>
+                        <option value="">First class</option>
+                        <option value="">Second class</option>
+                        <option value="">THird class</option>
+                    </select>
+                </article>
+            </aside>
+            <aside><button class="buttonsearch" onclick="busbuttonsearch()">Search</button></aside>
+        </section>
+    </div>
+    <div id="busBookingInfor">
+        <section class="travelsDetails">
+            <aside class="travelname">VRL Travels</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>9:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>1:26 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 780</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Suguna Travels</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>9:30 P M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>2:26 AM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 830</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Red Bus</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>7:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>11:26 AM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 680</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Sanjana</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>11:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>3:26 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 700</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">SRS Travels</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>2:45 P M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>7:46 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 850</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+    </div>
+    <div class="trainBooking">
+        <section class="bookingImage">
+            <aside><img src="./trainelogo.jpg" alt="" width="150px" height="150px"></aside>
+            <aside style="font-size: 300%; font-weight: bold; color: rgb(249, 44, 78);">BOOK MY TRAIN</aside>
+        </section>
+        <section class="transportdetails">
+            <aside class="fromAndToDetails">
+                <article class="fromDetailes">
+                    <p>FROM</p>
+                    <select name="" id="fromselect" class="selection">
+                        <option value="">Bangalore</option>
+                        <option value="">Belagavi</option>
+                        <option value="">Tumkur</option>
+                        <option value="">Chithradurga</option>
+                    </select>
+                </article>
+                <article class="toDetailes">
+                    <p>TO</p>
+                    <select name="" id="fromselect" class="selection">
+                        <option value="">Hydarabad</option>
+                        <option value="">Mumbai</option>
+                        <option value="">Chennai</option>
+                        <option value="">Goa</option>
+                    </select>
+                </article>
+                <article class="dateDetailes">
+                    <p>TRAVEL DATE</p>
+                    <input type="date" class="selection">
+                </article>
+                <article class="seatTypeDetailes">
+                    <p>CLASS</p>
+                    <select name="" id="" class="selection">
+                        <option value="">All class</option>
+                        <option value="">Sleeper class</option>
+                        <option value="">First class</option>
+                        <option value="">Second class</option>
+                        <option value="">THird class</option>
+                    </select>
+                </article>
+            </aside>
+            <aside><button class="buttonsearch"  onclick="trainebuttonsearch()">Search</button></aside>
+        </section>
+    </div>
+    <div id="trainBookingInfor">
+        <section class="travelsDetails">
+            <aside class="travelname">Mysore Express</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>9:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>1:26 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 780</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Mumbai Express</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>9:30 P M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>2:26 AM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 830</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Kachigudu Express</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>7:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>11:26 AM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 680</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Basava Express</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>11:30 A M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>3:26 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 700</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+        <section class="travelsDetails">
+            <aside class="travelname">Bidhar Express</aside>
+            <aside class="timeDetails">
+                <article>
+                    <p>Araival time : </p>
+                    <p>2:45 P M</p>
+                </article>
+                <article>-</article>
+                <article>
+                    <p>Deatination Time:</p>
+                    <p>7:46 PM</p>
+                </article>
+            </aside>
+            <aside class="travelCharge">₹ 850</aside>
+            <aside class="buttonToBookTicket"><button class="buttonBook">BOOK</button></aside>
+        </section>
+    </div>
+    <div class="flightBooking">
+        <section class="bookingImage">
+            <aside><img src="./flightlogo.png" alt=""  width="150px" height="150px"></aside>
+            <aside style="font-size: 300%; font-weight: bold; color: rgb(113, 17, 203);">BOOK MY FLIGHT</aside>
+        </section>
+        <section class="transportdetails" style="font-size: 600%; font-weight: bold;">AVAILABLE SOON......</section>
+    </div>
+    <div id="travelOfferDetails">
+        <aside class="availableOffer">Offers Available : </aside>
+        <section class="offerSectionOne">
+            <aside class="offerOne">
+                <article class="imageSection">
+                    <aside class="imageSectionOne">
+                        <img src="./busoffer1.jpg" alt="" width="95%" height="100%">
+                    </aside>
+                    <aside class="offerValue">
+                        <p style="font-size: 200%; font-weight: bold; color: rgb(1, 97, 1);">BUS</p>
+                        <p style="font-size: 210%; font-weight: bold;">Bring Your Travel Dreams to Life With:</p>
+                        <p style="font-size: 130%;">Up to 15% OFF on Buses</p>
+                    </aside>
+                </article>
+                <article class="bookSection">
+                    <p style="font-size: 150%;">T&C's Apply</p>
+                    <p style="font-size: 200%; color: blue; font-weight: bold;">BOOK NOW</p>
+                </article>
+            </aside>
+            <aside class="offerOne">
+                <article class="imageSection">
+                    <aside class="imageSectionOne">
+                        <img src="./busoffer2.jpg" alt="" width="95%" height="100%">
+                    </aside>
+                    <aside class="offerValue">
+                        <p style="font-size: 200%; font-weight: bold; color: rgb(1, 97, 1);">BUS</p>
+                        <p style="font-size: 210%; font-weight: bold;">AVAIL : Up to 10% Instant Discount* on</p>
+                        <p style="font-size: 130%;">bus,cabs & trains for your next gate</p>
+                    </aside>
+                </article>
+                <article class="bookSection">
+                    <p style="font-size: 150%;">T&C's Apply</p>
+                    <p style="font-size: 200%; color: blue; font-weight: bold;">BOOK NOW</p>
+                </article>
+            </aside>
+        </section>
+        <section class="offerSectionOne">
+            <aside class="offerOne">
+                <article class="imageSection">
+                    <aside class="imageSectionOne">
+                        <img src="./trainoffer2.jpg" alt="" width="95%" height="100%">
+                    </aside>
+                    <aside class="offerValue">
+                        <p style="font-size: 200%; font-weight: bold; color: rgb(1, 97, 1);">TRAIN</p>
+                        <p style="font-size: 210%; font-weight: bold;">#Deals On Wheels : Get Up to Rs.50 OFF* on Train</p>
+                        <p style="font-size: 130%;">Booking and get set for a fun-filled journey.</p>
+                    </aside>
+                </article>
+                <article class="bookSection">
+                    <p style="font-size: 150%;">T&C's Apply</p>
+                    <p style="font-size: 200%; color: blue; font-weight: bold;">BOOK NOW</p>
+                </article>
+            </aside>
+            <aside class="offerOne">
+                <article class="imageSection">
+                    <aside class="imageSectionOne">
+                        <img src="./train image1.jpg" alt="" width="95%" height="100%">
+                    </aside>
+                    <aside class="offerValue">
+                        <p style="font-size: 200%; font-weight: bold; color: rgb(1, 97, 1);">TRAIN</p>
+                        <p style="font-size: 210%; font-weight: bold;">Trip Guarantee on Trains!</p>
+                        <p style="font-size: 130%;">Waitlisted tickets no more. Get a confirmed ticket or a free upgrade to flights</p>
+                    </aside>
+                </article>
+                <article class="bookSection">
+                    <p style="font-size: 150%;">T&C's Apply</p>
+                    <p style="font-size: 200%; color: blue; font-weight: bold;">BOOK NOW</p>
+                </article>
+            </aside>
+        </section>
+    </div>
+    <div class="bookingInstrructionsDetailes"><aside class="bookingInstrructionsDetailesOne">Instrunctions for Booking : </aside></div>
+    <div class="bookingInstrructions">
+        <section class="bookingSectionOne">
+            <aside class="bookingSectionTwo">
+                <p style="font-size: 200%;">Book Train Tickets Without Any Hassle</p>
+                <p>Indian Railways is among the world's largest rail networks with an operating route length of more than 65,000 km. IRCTC (Indian Railway Catering and Tourism Corporation) is the face of India's online train tickets booking system. Book My Travels is the leading portal for booking IRCTC train tickets online which is offering the most convenient ways to book train tickets, check train schedule, train availability, and view live train status. IRCTC has been the most used website for train tickets booking. 
+                    It has seen the largest footfall in their websites and thus to make the experience even better for the customers we have stepped in to make it an easy solution. With us, you can now book train tickets with confirmed status, add meals and even grab great deals on booking.</p>
+            </aside>
+            <aside class="bookingSectionTwo">
+                <p style="font-size: 200%;">Easy IRCTC Train Booking</p>
+                <p>Indian Railways is among the world's largest rail networks with an operating route length of more than 65,000 km. IRCTC (Indian Railway Catering and Tourism Corporation) is the face of India's online train tickets booking system. Book My Travels is the leading portal for booking IRCTC train tickets online which is offering the most convenient ways to book train tickets, check train schedule, train availability,
+                     and view live train status. IRCTC has been the most used website for train tickets booking. It has seen the largest footfall in their websites and thus to make the experience even better for the customers we have stepped in to make it an easy solution. With us, you can now book train tickets with confirmed status, add meals and even grab great deals on booking.</p>
+            </aside>
+        </section>
+        <section class="bookingSectionFour">
+            <aside class="bookingSectionThree">
+                <p style="font-size: 200%;">How Book Train Tickets Online with Book My Travels</p>
+                <p>
+                    <p>Having confusion on how to book your train tickets online? process of booking your tickets in simple easy steps.</p>
+                    <p>Step 1: Log in to our website and select the train icon. Under the 'book train tickets' section, choose your city and its station where you will depart from and arrive at.</p>
+                    <p>Step 2: Then select the date of departure and choose from the preferred class of train travel. You can choose between Sleeper Class, Third Class, First AC, Second AC, Third AC, AC Chair car, and so on. Remember, while you book train tickets, the train fare varies according to the class of travel you choose.</p>
+                    <p>Step 3: You can now see all the updated train details with their schedule and availability. You can filter out by pricing, departure time, date, travel class, train types, and even stations.</p>
+                    <p>Step 4: Once you choose your desired train, you now reach the review page where you can fill up your details, berth preference, and also check the booking details and total amount. You can also avail free cancellation policy and travel insurance exclusive available on Book My Travels.</p>
+                    <p>Step 5: To proceed further, you will need to put your IRCTC login details. If you don't have your IRCTC username, you can always create a new one by adding the details.</p>
+                    <p>Step 6: The final step is to add coupon codes (if you have any) and proceed to pay. After selecting the mode of payment, you will be redirected to IRCTC for authentication. All you need to do is type in your password and have your tickets delivered to your mailbox.</p>
+                </p>
+            </aside>
+            <aside class="bookingSectionFive">
+                <p style="font-size: 200%;">Check Your PNR Status</p>
+                <p>Apart from providing e-tickets by mail, Book My Travels also sends you the relevant updates on your registered number 
+                    over text and WhatsApp. When you book train tickets each ticket holder gets a unique PNR, an acronym for Passenger Name Record, to check the status of the train and booking details. With the help of PNR enquiry, you can check live train status from the comfort of your home. With PNR enquiry, you will get to know whether your ticket is confirmed or if will you get a seat only if someone else cancels their ticket. A PNR status signifies whether your ticket is on the waitlist (WL), confirmed (CNF), canceled (CAN), or on reservation against cancellation (RAC). Make sure to check your PNR status before you board your train. You can also cancel your bookings by simply clicking on the “View and Manage Booking” section on Book My Travels. There you can cancel your bookings and also check refund status. Once you book train tickets, make sure to carry valid identification proof while traveling such as Aadhar card, passport, driving license, voter Id, pan card and other government-issued/approved ID cards.</p>
+            </aside>
+        </section>
+    </div>
+    <footer class="ticketfooter">
+        <div class="footerSectionOne">
+            <img src="./twiter.jpg" alt="" width="100px" height="100px">
+            <img src="./fb.png" alt="" width="100px" height="100px">
+            <img src="./instra.jpeg" alt="" width="100px" height="100px">
+        </div>
+        <div class="footerSectionTwo">
+            <aside style="font-size: 200%; font-weight: bold;"> © 2023 BOOK MY TRAVELS PVT. LTD.</aside>
+            <aside style="font-size: 170%; font-weight: bold;">Country India USA UAE</aside>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>

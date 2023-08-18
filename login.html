@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In page</title>
+    <style>
+        form{
+            margin-top: 13%;
+            padding-top: 10px;
+            margin-left: 35%;
+            width: 450px;
+            height: 300px;
+            background-color: chartreuse;            
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        label{
+            font-size: x-large;
+        }
+        button{
+            height: 40px;
+            font-size: large;
+            font-weight: bold;
+            width: 30%;
+            border-radius: 10px;
+        }
+        input{
+            float: right;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myForms">
+        <center><h1>Log in to the account</h1></center>
+        <label for="">User ID : </label><input type="text" placeholder="Phone number or Email id" id="userid"><br><br>
+        <label for="">Enter Password : </label><input type="text" id="userpassword"><br><br>
+        <div id="passwordVarify" style="font-size: x-large; color: red;"></div>
+        <div id="varify" style="font-size: x-large; color: red;"></div><br>
+        <center><button onclick="login()">Log In</button> <span style="font-size: larger;"> you don't have accont <span><a href="./sign.html" style="font-size: x-large; font-weight: bold;">SignIn</a></span></span></center>
+    </form>
+    <script>
+        ab=document.getElementById("varify")
+        ab.style.display="none"
+        ba=document.getElementById("passwordVarify")
+        ba.style.display="none"
+        function login(event){
+            var formm = document.getElementById('myForms')
+            formm.addEventListener('submit',function(event){event.preventDefault()})
+            const username1=document.getElementById("userid").value
+            console.log(username1);
+            const userpassword1=document.getElementById("userpassword").value
+            console.log(userpassword1);
+            const mobilenumber1=localStorage.getItem("mobilenumber")
+            console.log(mobilenumber1);
+            const mailId1=localStorage.getItem("mailId")
+            console.log(mailId1);
+            const passwordtype=localStorage.getItem("passwordtype1")
+            console.log(passwordtype);
+            if(username1 == mobilenumber1 | username1 == mailId1 ){
+                if(passwordtype == userpassword1){
+                    window.location.href="ticket.html"
+                }
+                else{
+                    ab=document.getElementById("varify")
+                    ab.style.display="none"
+                    ba=document.getElementById("passwordVarify")
+                    ba.style.display=""
+                    document.getElementById("passwordVarify").innerHTML="password is incorect"
+                }
+            }
+            else{
+                ba=document.getElementById("passwordVarify")
+                ba.style.display="none"
+                ab=document.getElementById("varify")
+                ab.style.display=""
+                document.getElementById("varify").innerHTML="Account detailes not found"
+            }
+        }
+    </script>
+</body>
+</html>

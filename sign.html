@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In page</title>
+    <style>
+        form{
+            margin-top: 10%;
+            padding-top: 5px;
+            margin-left: 35%;
+            width: 500px;
+            height: 600px;
+            background-color: chartreuse;            
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        label{
+            font-size: x-large;
+        }
+        button{
+            font-size: large;
+            width: 30%;
+            border-radius: 10px;
+        }   
+        select{
+            float: right;
+        }
+        input{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myForm">
+        <center><h1>Create Account</h1></center>
+        <label for="">Full Name : </label><input type="text" id="names"><br><br>
+        <label for="">Age : </label><input type="number"><br><br>
+        <label for="">Email Id : </label><input type="email" placeholder="asnja@123.gmail.com" id="mail"><br><br>
+        <label for="">Mobile No : </label><input type="number" id="phonenumbers"><br><br>
+        <center><button onclick="genearteotp()" id="generate">Generate OTP</button><button onclick="genearteotp()" id="resend">Resend OTP</button></center><br>
+        <center><div id="otpShow" style="font-size: x-large;"></div></center><br>
+        <label for="">Conform OTP : </label><input type="number" id="conformOtp"><br><br>
+        <div id="correctOtp" style="font-size: x-large; color: red;"></div>
+        <label for="">Create Password : </label><input type="password" id="password1"><br><br>
+        <label for="">Conform Password : </label><input type="password" id="password2"><br><br>
+        <div id="correctPassword" style="font-size: x-large; color: red;"></div>
+        <div id="accountvarify" style="font-size: x-large; color: red;"></div>
+        <center><button onclick="signin()">Sign up</button></center>
+    </form>
+    <script>
+        resendOtp=document.getElementById("resend")
+        resendOtp.style.display='none'
+        function genearteotp(event){
+            var formm = document.getElementById('myForm')
+            formm.addEventListener('submit',function(event){event.preventDefault()}) 
+            generateOtp=document.getElementById("generate")
+            generate.style.display='none'
+            resendOtp=document.getElementById("resend")
+            resendOtp.style.display=''
+            otp = Math.floor(1000+Math.random()*9000)
+            document.getElementById("otpShow").innerHTML= otp
+            console.log(otp);
+            localStorage.setItem("otp",otp)
+        }
+        function signin(event) {
+            var formm = document.getElementById('myForm')
+            formm.addEventListener('submit',function(event){event.preventDefault()})
+            username=document.getElementById("names").value
+            console.log(username);
+            mobilenumber=document.getElementById("phonenumbers").value
+            console.log(mobilenumber);
+            mailId=document.getElementById("mail").value
+            console.log(mailId);
+            localStorage.setItem("username",username)
+            localStorage.setItem("mobilenumber",mobilenumber)
+            localStorage.setItem("mailId",mailId)
+            const mobilenumber1=localStorage.getItem("mobilenumber")
+            console.log(mobilenumber1);
+            const mailId1=localStorage.getItem("mailId")
+            console.log(mailId1);
+            if(mobilenumber == mobilenumber1 & mailId == mailId1){
+                document.getElementById("accountvarify").innertext="account already exists please login"
+            }
+            const otp1=localStorage.getItem("otp")
+            console.log(otp1);
+            otp2=document.getElementById("conformOtp").value
+            console.log(otp2);
+            passwordtype1=document.getElementById("password1").value
+            console.log(passwordtype1);
+            passwordtype2=document.getElementById("password2").value
+            console.log(passwordtype2);
+            if(otp1 == otp2){
+                if(passwordtype1 == passwordtype2){
+                    localStorage.setItem("passwordtype1",passwordtype1)
+                    window.location.href="login.html"
+                }
+                else{
+                    document.getElementById("correctPassword").innerText="password is mismatch"
+                }
+            }
+            else{
+                document.getElementById("correctOtp").innerText="please enter correct otp"
+            }
+
+        } 
+    </script>
+</body>
+</html>
